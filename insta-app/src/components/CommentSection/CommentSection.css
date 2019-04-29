@@ -19,6 +19,9 @@
     border-top: 1px solid #22222220;
     margin-top: 10px;
     min-height: 56px;
+    display:flex;
+    align-items:center;
+    font-size:0.9rem;
 
 }
 
@@ -27,4 +30,21 @@
     font-size: 0.8rem;
     font-weight: bold;
     margin:5px 0;
+}
+
+.addComment form {
+    width:100%;
+}
+
+textarea {
+    border: none;
+    height: 18px;
+    max-height: 80px;
+    resize: none;
+    width: 100%;
+    outline: 0;
+    font-size: 0.9rem;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 8px;
+    color:#666;
 }

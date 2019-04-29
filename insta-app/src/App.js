@@ -8,8 +8,10 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      user: "skysthelimit68",
       posts : dummyData,
       searchField: "",
+
 
     }
   }
@@ -22,6 +24,7 @@ class App extends React.Component {
 
   }
 
+ 
   render() {
     return (
     <div className="App">

@@ -50,6 +50,20 @@
 .search {
     min-width: 125px;
     width: 215px;
+    display: flex;
+    justify-content: center;
+}
+
+.search input {
+    padding: 5px 10px;
+    text-align: center;
+    width: 90%;
+    font-size: 0.8rem;
+    background: #99999910;
+    border-style: none;
+    border: 1px solid #99999950;
+    border-radius: 2px;
+    color:#666;
 }
 
 .header-nav-icons {

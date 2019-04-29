@@ -2,6 +2,8 @@ import React from 'react';
 import Comment from './Comment';
 import AddComment from './AddComment';
 import PropTypes from 'prop-types';
+import moment from 'moment';
+
 
 
 const CommentList = props => {
@@ -11,7 +13,7 @@ const CommentList = props => {
                 <Comment comment = {comment} />
             ))}
             <div className="timestamp">{props.timestamp}</div>
-            <AddComment />    
+            <AddComment onChange= {props.onChange} commentField= {props.commentField }/>    
         </div>
     )
 }

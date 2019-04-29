@@ -14,7 +14,7 @@ const SearchBar = props => {
                 </div>
                 <div className="search">
                     <input 
-                    placeholder = "Search"
+                    placeholder = "&#128269; Search"
                     />
                 </div>
                 <div className="header-nav">

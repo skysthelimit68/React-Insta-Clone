@@ -6,7 +6,41 @@ import './PostContainer.css';
 import PropTypes from 'prop-types';
 
 
-const Post = props => {
+class Post extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            commentField:""
+        }
+    }
+
+    updateField = event => {
+        this.setState({
+            commentField: event.target.value,
+        })
+    }
+
+
+    render() {
+        return (
+            <div className="post-wrapper">
+                <PostHeader userName = {this.props.post.username} thumbnail = {this.props.post.thumbnailUrl}/>
+                <img src={this.props.post.imageUrl} />
+                <PostReaction likesCt = {this.props.post.likes} commentsCt = {this.props.post.comments.length} />
+                <CommentList 
+                comments = {this.props.post.comments} 
+                timestamp = {this.props.post.timestamp} 
+                commentField = {this.state.commentfield} 
+                onChange = {this.updateField}
+                />
+                
+            </div>
+        ) 
+    }
+}
+
+
+/*const Post = props => {
     return (
         <div className="post-wrapper">
             <PostHeader userName = {props.post.username} thumbnail = {props.post.thumbnailUrl}/>
@@ -16,7 +50,7 @@ const Post = props => {
             
         </div>
     )
-}
+}*/
 
 Post.propTypes = {
     postObject: PropTypes.shape({
