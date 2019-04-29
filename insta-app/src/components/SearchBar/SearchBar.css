@@ -58,15 +58,15 @@
     height: 24px;
     margin-left: 30px;
 }
-.explore {
+.nav-explore {
     background-position: -104px -255px;
 }
 
-.heart {
+.nav-heart {
     background-position: -231px -130px;
 }
 
-.profile {
+.nav-profile {
     background-position: -182px -203px;
 }
 

@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans|Roboto|Source+Sans+Pro');
 .App {
-  text-align: center;
+
+  background-color: #fafafa;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.9rem;
+  color: #262626;
 }
+
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;

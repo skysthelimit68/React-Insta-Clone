@@ -1,5 +1,6 @@
 import React from 'react';
 import './SearchBar.css';
+import PropTypes from 'prop-types';
 
 
 const SearchBar = props => {
@@ -17,13 +18,18 @@ const SearchBar = props => {
                     />
                 </div>
                 <div className="header-nav">
-                    <div className="header-nav-icons explore"></div>
-                    <div className="header-nav-icons heart"></div>
-                    <div className="header-nav-icons profile"></div>
+                    <div className="header-nav-icons nav-explore"></div>
+                    <div className="header-nav-icons nav-heart"></div>
+                    <div className="header-nav-icons nav-profile"></div>
                 </div>
             </div>
         </div>
     )
+}
+
+SearchBar.propTypes = {
+    onChange: PropTypes.func,
+    onClick: PropTypes.func
 }
 
 export default SearchBar;
