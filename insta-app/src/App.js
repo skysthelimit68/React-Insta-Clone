@@ -9,26 +9,37 @@ class App extends React.Component {
     super();
     this.state = {
       user: "skysthelimit68",
-      posts : dummyData,
+      posts : [],
       searchField: "",
-
-
+      //searchResult: [],
     }
-  }
+  } 
+
 
  
+  componentDidMount() {
+    this.setState({
+      posts : dummyData,
+    })
+  }
+
 
   onChange_SearchField = event => {
-
+    this.setState({
+      searchField : event.target.value,
+    })
   }
 
-  onClick_SearchButton = event => {
+  /*onSubmit_Search = event => {
+    event.preventDefault();
+    let result = this.state.posts.filter(post => {
+      return post.username.toLowerCase().includes(this.state.searchField.toLowerCase())
+    })
+    this.setState({
+      searchResult : result,
 
-  }
-
-  
-  
-
+    })
+  }*/
 
   render() {
     return (
@@ -37,8 +48,17 @@ class App extends React.Component {
        
        
       </header> 
-      <SearchBar onChange = {this.onChange_SearchField} onClick = {this.onClick_SearchButton} />
-      <PostContainer posts = {this.state.posts} user = {this.state.user}/>
+      <SearchBar 
+        onChange = {this.onChange_SearchField} 
+        onSubmit = {this.onSubmit_Search} 
+        searchField = {this.state.searchField} 
+      />
+      <PostContainer 
+        posts = {this.state.posts} 
+        searchResult = {this.state.searchResult}
+        user = {this.state.user}
+        searchField = {this.state.searchField}
+      />
     </div>
   );
   }

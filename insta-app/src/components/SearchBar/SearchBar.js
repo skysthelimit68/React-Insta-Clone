@@ -13,9 +13,13 @@ const SearchBar = props => {
                     <div className="brand"></div>
                 </div>
                 <div className="search">
-                    <input 
-                    placeholder = "&#128269; Search"
-                    />
+                    
+                        <input 
+                        placeholder = "&#128269; Search"
+                        value = {props.searchField}
+                        onChange = {props.onChange}
+                        />
+                    
                 </div>
                 <div className="header-nav">
                     <div className="header-nav-icons nav-explore"></div>

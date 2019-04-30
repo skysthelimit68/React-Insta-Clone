@@ -11,7 +11,8 @@ class PostReaction extends React.Component {
         }
     }
 
-    likeToggle = () => {
+    likeToggle = (event) => {
+        event.preventDefault();
         let newLikeCt = this.state.likes;
         newLikeCt = !this.state.liked ? newLikeCt+=1 : newLikeCt-=1 ;
         
