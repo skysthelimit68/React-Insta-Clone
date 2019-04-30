@@ -7,7 +7,7 @@ const PostContainer = props => {
     return (
        <div className="posts-container">
        {props.posts.map( post => (
-            <Post post = {post} />
+            <Post post = {post} user = {props.user} />
         ))}
         </div>
        
@@ -25,7 +25,8 @@ PostContainer.propTypes = {
             username:PropTypes.string,
             text: PropTypes.string,
         })
-    }) 
+    }) ,
+    user : PropTypes.string
     
 
 }

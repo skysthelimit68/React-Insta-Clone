@@ -16,6 +16,8 @@ class App extends React.Component {
     }
   }
 
+ 
+
   onChange_SearchField = event => {
 
   }
@@ -24,7 +26,10 @@ class App extends React.Component {
 
   }
 
- 
+  
+  
+
+
   render() {
     return (
     <div className="App">
@@ -33,7 +38,7 @@ class App extends React.Component {
        
       </header> 
       <SearchBar onChange = {this.onChange_SearchField} onClick = {this.onClick_SearchButton} />
-      <PostContainer posts = {this.state.posts} />
+      <PostContainer posts = {this.state.posts} user = {this.state.user}/>
     </div>
   );
   }

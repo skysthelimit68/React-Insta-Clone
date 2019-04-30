@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 const AddComment = props => {
     return (
         <div className="addComment">
-            <form >
-                <textarea 
+            <form onSubmit = {props.onSubmit}>
+                <input 
                     placeholder = "Add comment"
                     value = {props.commentField}
                     onChange = {props.onChange}
@@ -18,7 +18,8 @@ const AddComment = props => {
 
 AddComment.propTypes = {
     commentField: PropTypes.string,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    onSubmit: PropTypes.func
 }
 
 export default AddComment;

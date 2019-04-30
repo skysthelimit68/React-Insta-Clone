@@ -40,6 +40,14 @@
     color: #262626;
 }
 
+.postImg-wrapper {
+    width:100%;
+}
+
+.postImg-wrapper img {
+    width:100%;
+}
+
 .reaction-icons-wrapper {
     display: flex;
     flex-wrap: wrap;

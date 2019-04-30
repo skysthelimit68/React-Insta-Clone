@@ -10,14 +10,8 @@ class Post extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            commentField:""
+            
         }
-    }
-
-    updateField = event => {
-        this.setState({
-            commentField: event.target.value,
-        })
     }
 
 
@@ -25,13 +19,13 @@ class Post extends React.Component {
         return (
             <div className="post-wrapper">
                 <PostHeader userName = {this.props.post.username} thumbnail = {this.props.post.thumbnailUrl}/>
-                <img src={this.props.post.imageUrl} />
+                <div className="postImg-wrapper"><img src={this.props.post.imageUrl} /></div>
                 <PostReaction likesCt = {this.props.post.likes} commentsCt = {this.props.post.comments.length} />
                 <CommentList 
                 comments = {this.props.post.comments} 
                 timestamp = {this.props.post.timestamp} 
-                commentField = {this.state.commentfield} 
-                onChange = {this.updateField}
+                postId = {this.props.post.id}
+                user = {this.props.user}
                 />
                 
             </div>
@@ -62,8 +56,9 @@ Post.propTypes = {
         comments: PropTypes.shape({
             username:PropTypes.string,
             text: PropTypes.string,
-        })
-    }) 
+        }),
+    }) ,
+    user: PropTypes.string
     
 
 }
