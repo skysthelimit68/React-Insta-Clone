@@ -31,5 +31,4 @@ PostContainer.propTypes = {
 
 }
 
-
 export default PostContainer;

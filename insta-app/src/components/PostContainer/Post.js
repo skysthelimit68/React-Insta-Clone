@@ -10,7 +10,7 @@ class Post extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            
+            likes : props.post.likes
         }
     }
 
@@ -20,7 +20,7 @@ class Post extends React.Component {
             <div className="post-wrapper">
                 <PostHeader userName = {this.props.post.username} thumbnail = {this.props.post.thumbnailUrl}/>
                 <div className="postImg-wrapper"><img src={this.props.post.imageUrl} /></div>
-                <PostReaction likesCt = {this.props.post.likes} commentsCt = {this.props.post.comments.length} />
+                <PostReaction likesCt = {this.state.likes} commentsCt = {this.props.post.comments.length} />
                 <CommentList 
                 comments = {this.props.post.comments} 
                 timestamp = {this.props.post.timestamp} 
