@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import dummyData from './dummy-data';
-import SearchBar from './components/SearchBar/SearchBar'
-import PostContainer from './components/PostContainer/PostContainer'
+
+import PostPage from './components/PostContainer/PostPage';
 
 class App extends React.Component {
   constructor() {
@@ -29,28 +29,36 @@ class App extends React.Component {
 
   render() {
     return (
+      <PostPage 
+        onChange = {this.onChange_SearchField} 
+        onSubmit = {this.onSubmit_Search} 
+        searchField = {this.state.searchField} 
+        posts = {this.state.posts} 
+        user = {this.state.user}
+      />
+    )
+  }
+ 
+
+ /* render() {
+    return (
     <div className="App">
       <header className="">
        
        
       </header> 
       <SearchBar 
-        onChange = {this.onChange_SearchField} 
-        onSubmit = {this.onSubmit_Search} 
-        searchField = {this.state.searchField} 
+        
       />
       <PostContainer 
-        posts = {this.state.posts} 
-        //searchResult = {this.state.searchResult}
-        user = {this.state.user}
-        searchField = {this.state.searchField}
+        
       />
     </div>
-  );
-  }
-
-
+  );*/
 }
+
+
+
 
 
 
