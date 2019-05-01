@@ -22,7 +22,7 @@ class CommentList extends React.Component {
         newComments.push({
             id : `${this.props.postId}-${this.state.comments.length}`,
             text: this.state.commentField,
-            username: this.props.user
+            username: localStorage.getItem("user"),
         })
         
         this.setState({

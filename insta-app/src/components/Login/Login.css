@@ -1,0 +1,15 @@
+.login-wrapper {
+    border: 1px solid #00000030;
+    border-radius: 5px;
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    max-width:400px;
+
+}
+
+.login-wrapper input {
+    font-size:1.5rem;
+    padding:15px 1rem;
+
+}
