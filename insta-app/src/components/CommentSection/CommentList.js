@@ -43,7 +43,9 @@ class CommentList extends React.Component {
                 {this.state.comments.map(comment => (
                     <Comment comment = {comment} />
                 ))}
-                <div className="timestamp">{this.state.timestamp}</div>
+                <div className="timestamp">
+                    {moment(this.state.timestamp, "MMMM Do YYYY, h:mm:ss a").fromNow()}
+                </div>
                 <AddComment onChange= {this.updateField} commentField = {this.state.commentField } onSubmit = {this.addComment} />    
             </div>
         )

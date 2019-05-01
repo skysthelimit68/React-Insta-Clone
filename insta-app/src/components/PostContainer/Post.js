@@ -21,10 +21,10 @@ class Post extends React.Component {
                 <div className="postImg-wrapper"><img src={this.props.post.imageUrl} /></div>
                 <PostReaction likesCt = {this.props.post.likes} commentsCt = {this.props.post.comments.length} />
                 <CommentList 
-                comments = {this.props.post.comments} 
-                timestamp = {this.props.post.timestamp} 
-                postId = {this.props.post.id}
-                user = {this.props.user}
+                    comments = {this.props.post.comments} 
+                    timestamp = {this.props.post.timestamp} 
+                    postId = {this.props.post.id}
+                    user = {this.props.user}
                 />
                 
             </div>

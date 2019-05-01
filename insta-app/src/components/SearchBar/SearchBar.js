@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 
 
 const SearchBar = props => {
+    const type = () => {
+        console.log("it works")
+    }
+    
     return (
         <div className="searchHeader">
             <div className="header-wrapper">
@@ -27,6 +31,7 @@ const SearchBar = props => {
                     <div className="header-nav-icons nav-profile"></div>
                 </div>
             </div>
+            <button onClick={type}>test</button>
         </div>
     )
 }
