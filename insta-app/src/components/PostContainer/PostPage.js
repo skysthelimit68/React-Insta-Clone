@@ -1,16 +1,10 @@
 import React from 'react';
 import SearchBar from './../SearchBar/SearchBar';
 import PostContainer from './PostContainer';
-import Login from './../Login/Login';
 
 
 const PostPage = props => {
     
-    const logout = () => {
-        if (localStorage.getItem('user')) {
-            localStorage.removeItem("user") 
-        }
-    }
     
     return (
         <div className="App">

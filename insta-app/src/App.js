@@ -5,6 +5,7 @@ import PostPage from './components/PostContainer/PostPage';
 import withAuthenticate from './authentication/withAuthenticate';
 import Login from './components/Login/Login';
 
+
 const ComponentFromWithAuthenticate = withAuthenticate(PostPage)(Login);
 
 

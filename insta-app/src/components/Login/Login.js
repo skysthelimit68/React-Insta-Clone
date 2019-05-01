@@ -27,14 +27,19 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div className="login-wrapper">
-                <input 
-                type="text" 
-                placeholder="username" 
-                onChange={this.onChange}
-                value = {this.state.userField} />
-                <input type="password" placeholder="password" />
-                <button onClick={this.login}>Log in</button>
+            <div className="login-page">
+
+                <div className="login-wrapper">
+                    <div className="login-logo"></div>
+                    <div className="login-icon"></div>
+                    <input 
+                    type="text" 
+                    placeholder="username" 
+                    onChange={this.onChange}
+                    value = {this.state.userField} />
+                    <input type="password" placeholder="password" />
+                    <button onClick={this.login}>Log in</button>
+                </div>
             </div>
         )
     }
