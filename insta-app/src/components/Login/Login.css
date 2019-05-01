@@ -1,3 +1,5 @@
+
+
 .login-page {
     width: 100%;
     height: 100vh;
@@ -7,6 +9,7 @@
     flex-wrap: wrap;
     background: url("./../../img/insta_bg.jpg");
     background-size:cover;
+    font-family: Roboto, sans-serif;
 }
 .login-wrapper {
     border-radius: 5px;
@@ -26,7 +29,7 @@
     right: 10px;
     top: 10px;
     background-image: url(/static/media/insta-sprite.d0e3cb0e.png);
-    background-position: 0px -70px;
+    background-position: 0px -72px;
     height: 70px;
     width: 70px;
     background-repeat: no-repeat;
@@ -42,11 +45,13 @@
 }
 
 .login-wrapper input {
-    font-size: 1.5rem;
-    padding: 15px 1rem;
+    font-size: 1.2rem;
+    padding: 20px 1rem;
     outline: 0;
     border: none;
     margin-bottom: 5px;
+    font-family: Roboto, sans-serif;
+    border-radius:3px;
 }
 
 .login-wrapper input:first-child {
@@ -54,10 +59,13 @@
 }
 
 .login-wrapper button {
-    border-radius: 0;
+    border-radius: 4px;
     padding: 10px;
     margin-top: 30px;
     font-size: 1.2rem;
+    font-family: "Open Sans", sans-serif;
+    color: #333333;
+    outline: 0;
 
 }
 
