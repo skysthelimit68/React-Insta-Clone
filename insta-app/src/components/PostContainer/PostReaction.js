@@ -1,6 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import styled from "styled-components";
+
+const ReactionIconsWrapper = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px 16px;`;
+
+const ReactionIcons = styled.div`
+    background-image: url(/static/media/insta-sprite.d0e3cb0e.png);
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+
+    ${props => (props.type === 'react-thoughtBubble' ? `background-position: 0px -177px;` : null)}
+    ${props => (props.type === 'react-heart' ? `background-position: -231px -130px;` : null)}
+    ${props => (props.type === 'react-heart-active' ? `background-position: -231px -104px;` : null)}
+`;
+
+const ReactCount = styled.span`
+    margin-top:10px;
+    width:100%;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    color: #262626;
+    margin-right:0.1rem;`;
+
+
 class PostReaction extends React.Component {
     constructor(props) {
         super(props);
@@ -23,6 +52,17 @@ class PostReaction extends React.Component {
     }
 
     render() {
+        let likeClass = !this.state.liked ? "react-heart" : "react-heart-active";
+        return (
+            <ReactionIconsWrapper>
+                <ReactionIcons type={likeClass} onClick = {this.likeToggle}></ReactionIcons>
+                <ReactionIcons type="react-thoughtBubble"></ReactionIcons>
+                <ReactCount>{this.state.likes}{" "}Likes</ReactCount>
+            </ReactionIconsWrapper>
+        )
+    }
+
+    /*render() {
         let likeClass = !this.state.liked ? "reaction-icons react-heart" : "react-heart-active";
         return (
             <div className="reaction-icons-wrapper">
@@ -31,7 +71,7 @@ class PostReaction extends React.Component {
                 <span className="react-count">{this.state.likes}{" "}Likes</span>
             </div>
         )
-    }
+    }*/
 }
 
 
