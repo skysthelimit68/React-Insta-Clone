@@ -5,6 +5,24 @@ import CommentList from '../CommentSection/CommentList';
 import './PostContainer.css';
 import PropTypes from 'prop-types';
 
+import styled from "styled-components";
+
+
+const PostWrapper = styled.div`
+    background: white;
+    border: 1px solid rgba(0,0,0,.0975);
+    margin: 15px 0;`;
+
+const PostImgWrapper = styled.div`
+    width:100%;
+`;
+
+const PostImg = styled.img`
+    width:100%;
+`;
+
+
+
 
 class Post extends React.Component {
     constructor(props) {
@@ -13,12 +31,11 @@ class Post extends React.Component {
         }
     }
 
-
     render() {
         return (
-            <div className="post-wrapper">
+            <PostWrapper>
                 <PostHeader userName = {this.props.post.username} thumbnail = {this.props.post.thumbnailUrl}/>
-                <div className="postImg-wrapper"><img src={this.props.post.imageUrl} /></div>
+                <PostImgWrapper><PostImg src={this.props.post.imageUrl} /></PostImgWrapper>
                 <PostReaction likesCt = {this.props.post.likes} commentsCt = {this.props.post.comments.length} />
                 <CommentList 
                     comments = {this.props.post.comments} 
@@ -26,8 +43,7 @@ class Post extends React.Component {
                     postId = {this.props.post.id}
                     user = {this.props.user}
                 />
-                
-            </div>
+            </PostWrapper>    
         ) 
     }
 }
