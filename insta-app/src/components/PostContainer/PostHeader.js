@@ -27,8 +27,6 @@ const PostHeaderUserName = styled.span`
     color: #262626;
     `;
 
-
-
 const PostHeader = props => {
     return (
         <PostHeaderWrapper>
