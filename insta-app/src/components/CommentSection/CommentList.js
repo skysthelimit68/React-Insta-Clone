@@ -4,6 +4,18 @@ import AddComment from './AddComment';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
+import styled from "styled-components";
+
+const CommentsWrapper = styled.div`
+    padding:8px 16px;
+    `;
+
+const Timestamp = styled.div`
+    color: #22222250;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin:5px 0;
+    `;
 
 class CommentList extends React.Component {
     constructor(props) {
@@ -45,15 +57,15 @@ class CommentList extends React.Component {
 
     render() {
         return (
-            <div className="comments-wrapper">
+            <CommentsWrapper>
                 {this.state.comments.map(comment => (
                     <Comment comment = {comment} />
                 ))}
-                <div className="timestamp">
+                <Timestamp>
                     {moment(this.state.timestamp, "MMMM Do YYYY, h:mm:ss a").fromNow()}
-                </div>
+                </Timestamp>
                 <AddComment onChange= {this.updateField} commentField = {this.state.commentField } onSubmit = {this.addComment} />    
-            </div>
+            </CommentsWrapper>
         )
     }
 }
