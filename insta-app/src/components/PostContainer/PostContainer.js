@@ -3,9 +3,37 @@ import Post from './Post';
 import PropTypes from 'prop-types';
 import './PostContainer.css';
 
+import styled from "styled-components";
+
+
+const PostsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 614px;
+    margin: 30px auto;
+`;
+
 
 const PostContainer = props => {
+    
     return (
+        <PostsContainer>
+            {props.posts.map( post => {
+                if(!post.username.toLowerCase().includes(props.searchField.toLowerCase()))
+                    {
+                    return;
+                } else {
+                    return <Post post = {post} user = {props.user} />
+                }
+                
+            })}
+        </PostsContainer>
+    )
+    
+    /*return (
         <div className="posts-container">
             {props.posts.map( post => {
                 if(!post.username.toLowerCase().includes(props.searchField.toLowerCase()))
@@ -17,10 +45,8 @@ const PostContainer = props => {
                 
             })}
         </div>
-    )
+    )*/
 }
-
-
 
 
 /*
