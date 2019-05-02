@@ -18,15 +18,21 @@ class CommentList extends React.Component {
     //will need to change to ... later
     addComment = (event) => {
         event.preventDefault();
-        let newComments = this.state.comments;
+       /* let newComments = this.state.comments;
         newComments.push({
             id : `${this.props.postId}-${this.state.comments.length}`,
             text: this.state.commentField,
             username: localStorage.getItem("user"),
-        })
+        })*/
+
+        //let newComments = 
         
         this.setState({
-            comments: newComments,
+            comments: [...this.state.comments, {
+            id:`${this.props.postId}-${this.state.comments.length}`,
+            text:this.state.commentField,
+            username:localStorage.getItem("user")
+        }],
             commentField : ""
         }) 
     }
