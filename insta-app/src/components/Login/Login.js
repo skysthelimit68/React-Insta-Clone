@@ -33,10 +33,10 @@ class Login extends React.Component {
                     <div className="login-logo"></div>
                     <div className="login-icon"></div>
                     <input 
-                    type="text" 
-                    placeholder="username" 
-                    onChange={this.onChange}
-                    value = {this.state.userField} />
+                        type="text" 
+                        placeholder="username" 
+                        onChange={this.onChange}
+                        value = {this.state.userField} />
                     <input type="password" placeholder="password" />
                     <button onClick={this.login}>Log in</button>
                 </div>

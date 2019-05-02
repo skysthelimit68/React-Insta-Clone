@@ -9,6 +9,7 @@
     flex-wrap: wrap;
     background: url("./../../img/insta_bg.jpg");
     background-size:cover;
+    background-position:center center;
     font-family: Roboto, sans-serif;
 }
 .login-wrapper {
