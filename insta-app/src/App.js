@@ -33,7 +33,8 @@ class App extends React.Component {
     })
   }
 
-  logout = () => {
+  logout = event => {
+    event.preventDefault();
     if (localStorage.getItem('user')) {
       localStorage.removeItem("user")
       this.setState({

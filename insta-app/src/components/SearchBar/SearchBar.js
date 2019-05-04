@@ -74,9 +74,86 @@ const HeaderNavIcons = styled.div`
 
     ${props => (props.type === 'nav-explore' ? `background-position: -104px -255px;` : null)}
     ${props => (props.type === 'nav-heart' ? `background-position: -231px -130px;` : null)}
-    ${props => (props.type === 'nav-profile' ? `background-position: -182px -203px;` : null)}
+    ${props => (props.type === 'nav-profile' ? `background-position: -182px -203px; position:relative;` : null)}
 `;
 
+const ProfileDropdown = styled.div`
+    position: absolute;
+    top: 150%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    left: -90%;
+    background: #ccc;
+    padding: 15px 10px;
+    width:50px;
+    cursor:pointer;
+
+    ${props => (props.type === 'profileDropdown-visible' ? `display:block;` : null)}
+    ${props => (props.type === 'profileDropdown-hidden' ? `display:none;` : null)}
+
+    &::before {
+        content: '◆';
+        width: 0;
+        height: 0;
+        position: absolute;
+        left: 34%;
+        top: -21px;
+        color: #ccc;
+        font-size: 1.8rem;
+    }
+`;
+
+const ProfileDropdownItem = styled.div`
+    width:100%;
+    font-size:1rem;
+
+`;
+
+class SearchBar extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            profileToggle : false
+        }
+    }
+
+    profileToggle = () => {
+        this.setState({
+            profileToggle: !this.state.profileToggle
+        })
+    }
+    render() {
+        let profileToggleStatus = this.state.profileToggle? "profileDropdown-visible" : "profileDropdown-hidden";
+        return (
+            <SearchHeader>
+                <HeaderWrapper>
+                    <HeaderLogo>
+                        <HeaderLogoElements type="logo-icon"></HeaderLogoElements>
+                        <HeaderLogoDivider></HeaderLogoDivider>
+                        <HeaderLogoElements type="logo-brand"></HeaderLogoElements>
+                    </HeaderLogo>
+                    <Search>
+                        <Input
+                            placeholder="&#128269; Search"
+                            value={this.props.searchField}
+                            onChange={this.props.onChange}
+                        />
+                    </Search>
+                    <HeaderNav>
+                        <HeaderNavIcons type="nav-explore"></HeaderNavIcons>
+                        <HeaderNavIcons type="nav-heart"></HeaderNavIcons>
+                        <HeaderNavIcons type="nav-profile" onClick={this.profileToggle}>
+                            <ProfileDropdown type={profileToggleStatus}>            
+                                <ProfileDropdownItem onClick = {this.props.logOut}>Logout</ProfileDropdownItem>
+                            </ProfileDropdown>
+                        </HeaderNavIcons>
+                    </HeaderNav>
+                </HeaderWrapper>
+            </SearchHeader>
+        )
+    }
+}
+/*
 const SearchBar = props => {
     
     return (
@@ -101,37 +178,37 @@ const SearchBar = props => {
                 </HeaderNav>
             </HeaderWrapper>
         </SearchHeader>
-    )
+    )*/
 
-    /*
-    return (
-        <div className="searchHeader">
-            <div className="header-wrapper">
-                <div className="header-logo">
-                    <div className="logo"></div>
-                    <div className="divider"></div>
-                    <div className="brand"></div>
-                </div>
-                <div className="search">
-                    
-                        <input 
-                        placeholder = "&#128269; Search"
-                        value = {props.searchField}
-                        onChange = {props.onChange}
-                        />
-                    
-                </div>
-                <div className="header-nav">
-                    <div className="header-nav-icons nav-explore"></div>
-                    <div className="header-nav-icons nav-heart"></div>
-                    <div className="header-nav-icons nav-profile"></div>
-                </div>
+/*
+return (
+    <div className="searchHeader">
+        <div className="header-wrapper">
+            <div className="header-logo">
+                <div className="logo"></div>
+                <div className="divider"></div>
+                <div className="brand"></div>
             </div>
-
+            <div className="search">
+                
+                    <input 
+                    placeholder = "&#128269; Search"
+                    value = {props.searchField}
+                    onChange = {props.onChange}
+                    />
+                
+            </div>
+            <div className="header-nav">
+                <div className="header-nav-icons nav-explore"></div>
+                <div className="header-nav-icons nav-heart"></div>
+                <div className="header-nav-icons nav-profile"></div>
+            </div>
         </div>
-    )
-    */
-}
+
+    </div>
+)
+*/
+//}
 
 SearchBar.propTypes = {
     onChange: PropTypes.func,

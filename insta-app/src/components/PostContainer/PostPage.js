@@ -19,8 +19,9 @@ const PostPage = props => {
                 onChange = {props.onChange} 
                 onSubmit = {props.onSubmit} 
                 searchField = {props.searchField} 
+                logOut = {props.logout}
+
             />
-            <button onClick = {props.logout}>logout</button>
             <PostContainer 
                 posts = {props.posts} 
                 user = {props.user}
