@@ -1,0 +1,94 @@
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 614px;
+    margin: 30px auto;
+}
+
+.post-wrapper {
+    background: white;
+    border: 1px solid rgba(0,0,0,.0975);
+    margin: 15px 0;
+}
+
+.postHeader-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 16px;
+}
+
+.postHeader-icon-wrapper {
+    width:44px;
+    height:44px;
+}
+
+.postHeader-icon-wrapper img {
+    border-radius:50%;
+    width:100%;
+}
+
+.postHeader-username {
+    margin-left: 16px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    color: #262626;
+}
+
+.postImg-wrapper {
+    width:100%;
+}
+
+.postImg-wrapper img {
+    width:100%;
+}
+
+.reaction-icons-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px 16px;
+}
+
+.reaction-icons {
+    background-image: url(/static/media/insta-sprite.d0e3cb0e.png);
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+    
+}
+
+.react-heart {
+    background-position: -231px -130px;
+}
+
+.react-heart-active {
+    background-image: url(/static/media/insta-sprite.d0e3cb0e.png);
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+    background-position: -231px -104px;
+}
+
+.react-thoughtBubble {
+    background-position: 0px -177px;
+}
+
+.react-count {
+    margin-top:10px;
+    width:100%;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    color: #262626;
+    margin-right:0.1rem;
+}
+
+
+
+
